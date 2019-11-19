@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Lift.Models
 {
-    public class Results
+    public class User
     {
-         
+        public int Id { get; set; } = 0;
     }
 }
