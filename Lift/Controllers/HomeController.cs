@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Lift.Models;
 using Lift.Service.User;
+using Lift.Service.StarupConfigurations;
 
 namespace Lift.Controllers
 {

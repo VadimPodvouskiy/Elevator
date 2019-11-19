@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lift.Service.StarupConfigurations
 {
-    class StartupConfigurations
+    public class StartupConfigurations
     {
     }
 }

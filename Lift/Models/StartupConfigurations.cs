@@ -7,11 +7,11 @@ namespace Lift.Models
 {
     public class StartupConfigurations
     {
-        public bool ModelWorkSystem { get; set; }
-        public int Lifts { get; set; }
-        public int Floors { get; set; }
-        public int PeopleInLift { get; set; }
-        public double SpeedOfLift { get; set; }
-        public double AccelerationOfLift { get; set; }
+        public bool ModelWorkSystem { get; set; } = false;
+        public int Lifts { get; set; } = 0;
+        public int Floors { get; set; } = 0;
+        public int PeopleInLift { get; set; } = 0;
+        public double SpeedOfLift { get; set; } = 0;
+        public double AccelerationOfLift { get; set; } = 0;
     }
 }
