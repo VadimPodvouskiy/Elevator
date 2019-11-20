@@ -2,14 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Lift.Models;
 using System.Collections.Immutable;
+using System.Linq;
 
 namespace Lift.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult MenuInterface(StartupConfigurations startupConfigurations)
         {
-            return View("MenuInterface");
+            return View("MenuInterface", startupConfigurations);
         }
 
         public ViewResult LiftInterface()
