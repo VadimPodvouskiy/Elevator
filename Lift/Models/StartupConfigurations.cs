@@ -9,7 +9,6 @@ namespace Lift.Models
     {
         public bool ModelWorkSystem { get; set; } = false;
         public int Lifts { get; set; } = 0;
-        public int Floors { get; set; } = 0;
         public int PeopleInLift { get; set; } = 0;
         public double SpeedOfLift { get; set; } = 0;
         public double AccelerationOfLift { get; set; } = 0;

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lift", "Lift.csproj", "{261C3F7A-588F-44D5-9FCE-0632B1474F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lift.Service", "..\Lift.Service\Lift.Service.csproj", "{21F32C06-4A31-44AA-A7C9-0B2F36B9F39D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{261C3F7A-588F-44D5-9FCE-0632B1474F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261C3F7A-588F-44D5-9FCE-0632B1474F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261C3F7A-588F-44D5-9FCE-0632B1474F19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21F32C06-4A31-44AA-A7C9-0B2F36B9F39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21F32C06-4A31-44AA-A7C9-0B2F36B9F39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21F32C06-4A31-44AA-A7C9-0B2F36B9F39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21F32C06-4A31-44AA-A7C9-0B2F36B9F39D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

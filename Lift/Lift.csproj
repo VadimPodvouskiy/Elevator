@@ -28,8 +28,4 @@
     <Folder Include="MyStaticFiles\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Lift.Service\Lift.Service.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Lift.Models;
-using Lift.Service.User;
-using Lift.Service.StarupConfigurations;
 using System.Collections.Immutable;
 
 namespace Lift.Controllers
