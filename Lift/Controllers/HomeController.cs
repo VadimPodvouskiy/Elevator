@@ -12,7 +12,7 @@ namespace Lift.Controllers
         {
             return View("MenuInterface", startupConfigurations);
         }
-
+       
         public ViewResult LiftInterface()
         {
             return View();
