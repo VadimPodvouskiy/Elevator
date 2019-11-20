@@ -13,6 +13,7 @@ namespace Lift.Controllers
             return View("MenuInterface", startupConfigurations);
         }
 
+        [HttpPost]
         public ViewResult LiftInterface(StartupConfigurations startupConfigurations)
         {
             return View("LiftInterface", startupConfigurations);
