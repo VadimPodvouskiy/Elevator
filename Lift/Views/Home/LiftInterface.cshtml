@@ -1,4 +1,6 @@
-﻿@{ 
+﻿@model Lift.Models.StartupConfigurations
+
+@{ 
     Layout = null;
 }
 
@@ -14,16 +16,9 @@
     <link rel="stylesheet" href="~/css/Classes.css"/>
     <style>
         .status-bar {
-        background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
-        color: black;
-        border-radius: 10px;
-        padding: 2px;
-        text-align: center;
-        margin-left: 5%;
-        width: 150px;
-        height: 140px;
-        margin-left: 1300px;
-        margin-top: -140px;
+        background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd ); color: black; border-radius: 10px;
+        padding: 2px; text-align: center; margin-left: 5%; width: 150px; height: 140px;
+        margin-left: 1300px; margin-top: -140px;
     }
     </style>
 </head>
@@ -224,7 +219,7 @@
                     <!--<img src="openedlift.jpg" class="lift">-->
                 </div>
             </td>
-            } while (j < 5);
+            } while (j < Model.Lifts);
 
             @*<!--Lift Second-->
         <td style="width: 55px;">
@@ -240,7 +235,7 @@
             </div>
         </td>*@
         </tr>
-        } while (i < 12);
+        } while (i < Model.Floors);
     </table>
 
     <!--START-->

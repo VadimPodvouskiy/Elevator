@@ -13,9 +13,9 @@ namespace Lift.Controllers
             return View("MenuInterface", startupConfigurations);
         }
 
-        public ViewResult LiftInterface()
+        public ViewResult LiftInterface(StartupConfigurations startupConfigurations)
         {
-            return View();
+            return View("LiftInterface", startupConfigurations);
         }
 
         public ViewResult ExitInterface()

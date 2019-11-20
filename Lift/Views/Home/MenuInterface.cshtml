@@ -18,11 +18,11 @@
 <body>
     <div class="top-buttons" style="display: flex;
         justify-content: center; align-items: center; margin-top: 50px; margin-left: 65px;">
-        <button style="color: white; margin-right: 20%; width: 200px; height: 40px; 
+        <button onclick="@{Model.ModelWorkSystem = false;}" style="color: white; margin-right: 20%; width: 200px; height: 40px; 
             background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
             Минимум времени ожидания
         </button>
-        <button style="color: white; width: 200px; height: 40px;
+        <button onclick="@{Model.ModelWorkSystem = true;}" style="color: white; width: 200px; height: 40px;
             background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
             Минимум холостых ходов
         </button>
@@ -48,37 +48,28 @@
             </td>
             <td style="margin-top: 12%;" ; rowspan="2">
                 <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
-                    width: 40px; height: 40px;
-                    text-align: center;
-                    line-height: 40px;">
+                    width: 40px; height: 40px; text-align: center; line-height: 40px;">
                     <b>@Model.Lifts</b>
                 </div>
             </td>
             <td style="width: 30%;" ; rowspan="2">
             </td>
             <td style="margin-top: 12%;" ; rowspan="2">
-                <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
-                    width: 70px; height: 40px;
-                    text-align: center;
-                    line-height: 40px;">
+                <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white; width: 70px; height: 40px;
+                    text-align: center; line-height: 40px;">
                     <b>Этажи</b>
                 </div>
             </td>
             <td>
-                <button style="color: white;
-                        width: 50px;
-                        height: 50px;
-                        background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 );
-                        border-radius: 100%;">
+                <button onclick="@{Model.Floors = Model.Floors + 1;}" style="color: white; width: 50px; height: 50px; 
+                    background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Up
                 </button>
             </td>
             <td style="margin-top: 12%;" ; rowspan="2">
                 <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
-                    width: 40px; height: 40px;
-                    text-align: center;
-                    line-height: 35px;">
-                    <b>15</b>
+                    width: 40px; height: 40px; text-align: center; line-height: 35px;">
+                    <b>@Model.Floors</b>
                 </div>
             </td>
             <td style="width: 50%;" ; rowspan="2">
@@ -86,20 +77,14 @@
         </tr>
         <tr>
             <td>
-                <button style="color: white;
-                        width: 50px;
-                        height: 50px;
-                        background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 );
-                        border-radius: 100%;">
+                <button style="color: white; width: 50px; height: 50px;
+                        background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Down
                 </button>
             </td>
             <td>
-                <button style="color: white;
-                        width: 50px;
-                        height: 50px;
-                        background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 );
-                        border-radius: 100%;">
+                <button style="color: white; width: 50px; height: 50px;
+                    background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Down
                 </button>
             </td>
@@ -159,7 +144,7 @@
                     width: 40px; height: 40px;
                     text-align: center;
                     line-height: 35px;">
-                    <b>1.5</b>
+                    <b>@Model.SpeedOfLift</b>
                 </div>
             </td>
             <td style="width: 30%;" ; rowspan="2">
@@ -186,7 +171,7 @@
                     width: 40px; height: 40px;
                     text-align: center;
                     line-height: 35px;">
-                    <b>1</b>
+                    <b>@Model.AccelerationOfLift</b>
                 </div>
             </td>
             <td style="width: 50%;" ; rowspan="2">
