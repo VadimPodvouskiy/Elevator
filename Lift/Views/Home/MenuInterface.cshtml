@@ -1,4 +1,4 @@
-﻿@model Lift.Models.StartupConfigurations
+﻿@model Lift.Models.StartupConfigurations 
 
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -16,6 +16,146 @@
     <link rel="stylesheet" href="~/css/Classes.css" />
     <link rel="stylesheet" href="~/css/Div.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+        var lifts = @Model.Lifts;
+        var floors = @Model.Floors;
+        var people = @Model.PeopleInLift;
+        var speed = @Model.SpeedOfLift;
+        var acceleration = @Model.AccelerationOfLift;
+
+        function liftUp(event) {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = lifts;
+            if (x < 5)
+            {
+                $button.prop('value', ++x);
+            }
+            lifts = x;
+            $('#LiftController b').text(x);
+            event.preventDefault();
+        }
+
+        function liftDown(event)
+        {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = lifts;
+            if (x > 1)
+            {
+                $button.prop('value', --x);
+            }
+            lifts = x;
+            $('#LiftController b').text(x);
+            event.preventDefault();
+        }
+         function floorUp(event) {
+            var $button = $(event.srcElement);
+             var x = $button.val();
+             x = floors;
+            if (x < 20)
+            {
+                $button.prop('value', ++x);
+             }
+             floors = x;
+            $('#FloorController b').text(x);
+            event.preventDefault();
+        }
+
+        function floorDown(event)
+        {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = floors;
+            if (x > 6)
+            {
+                $button.prop('value', --x);
+            }
+            floors = x;
+            $('#FloorController b').text(x);
+            event.preventDefault();
+        }
+         function peopleUp(event) {
+            var $button = $(event.srcElement);
+             var x = $button.val();
+             x = people;
+            if (x < 5)
+            {
+                $button.prop('value', ++x);
+             }
+             people = x;
+            $('#PeopleController b').text(x);
+            event.preventDefault();
+        }
+
+        function peopleDown(event)
+        {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = people;
+            if (x > 3)
+            {
+                $button.prop('value', --x);
+            }
+            people = x;
+            $('#PeopleController b').text(x);
+            event.preventDefault();
+        }
+        function speedUp(event) {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = speed;
+            if (x < 2.5)
+            {
+                $button.prop('value', ++x);
+            }
+            speed = x;
+            $('#SpeedController b').text(x);
+            event.preventDefault();
+        }
+
+        function liftDown(event)
+        {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = lifts;
+            if (x > 1)
+            {
+                $button.prop('value', --x);
+            }
+            lifts = x;
+            $('#LiftController b').text(x);
+            event.preventDefault();
+        }
+         function floorUp(event) {
+            var $button = $(event.srcElement);
+             var x = $button.val();
+             x = floors;
+            if (x < 20)
+            {
+                $button.prop('value', ++x);
+             }
+             floors = x;
+            $('#FloorController b').text(x);
+            event.preventDefault();
+        }
+
+        function floorDown(event)
+        {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            x = floors;
+            if (x > 6)
+            {
+                $button.prop('value', --x);
+            }
+            floors = x;
+            $('#FloorController b').text(x);
+            event.preventDefault();
+        }
+    </script>
 
 </head>
 
@@ -46,7 +186,7 @@
                 </div>
             </td>
             <td>
-                <button onclick="myFunction(event)" value="@Model.Lifts" style="color: white; width: 50px; height: 50px;
+                <button onclick="liftUp(event)" value="@Model.Lifts" style="color: white; width: 50px; height: 50px;
                 background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Up
                 </button>
@@ -71,13 +211,13 @@
                 </div>
             </td>
             <td>
-                <button onclick="@{Model.Floors = Model.Floors + 1;}" style="color: white; width: 50px; height: 50px;
+                <button onclick="floorUp(event)" value="@Model.Floors" style="color: white; width: 50px; height: 50px;
                     background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Up
                 </button>
             </td>
             <td style="margin-top: 12%;" ; rowspan="2">
-                <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
+                <div id="FloorController" style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
                     width: 40px; height: 40px; text-align: center; line-height: 35px;">
                     <b>@Model.Floors</b>
                 </div>
@@ -87,13 +227,13 @@
         </tr>
         <tr>
             <td>
-                <button onclick="myFunction2(event)" value="@Model.Lifts" style="color: white; width: 50px; height: 50px;
+                <button onclick="liftDown(event)" value="@Model.Lifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Down
                 </button>
             </td>
             <td>
-                <button style="color: white; width: 50px; height: 50px;
+                <button onclick="floorDown(event)" value="@Model.Floors" style="color: white; width: 50px; height: 50px;
                     background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                     Down
                 </button>
@@ -114,7 +254,7 @@
                 </div>
             </td>
             <td>
-                <button style="color: white;
+                <button onclick="peopleUp(event)" value="@Model.PeopleInLift" style="color: white;
                         width: 50px;
                 height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 );
@@ -123,7 +263,7 @@
                 </button>
             </td>
             <td style="margin-top: 12%;" ; rowspan="2">
-                <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
+                <div id="PeopleController" style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
                     width: 40px; height: 40px;
                     text-align: center;
                     line-height: 40px;">
@@ -189,7 +329,8 @@
         </tr>
         <tr>
             <td>
-                <button style="color: white;
+                <button onclick="peopleDown(event)" value="@Model.PeopleInLift"
+                        style="color: white;
                         width: 50px;
                         height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 );
@@ -247,38 +388,6 @@
             </button>
         </form>
     </div>
-
-    <script>
-
-         var lifts = @Model.Lifts;
-
-        function myFunction(event) {
-            var $button = $(event.srcElement);
-            var x = $button.val();
-            x = lifts;
-            if (x < 5)
-            {
-                $button.prop('value', ++x);
-            }
-            lifts = x;
-            $('#LiftController b').text(x);
-            event.preventDefault();
-        }
-
-        function myFunction2(event)
-        {
-            var $button = $(event.srcElement);
-            var x = $button.val();
-            x = lifts;
-            if (x > 0)
-            {
-                $button.prop('value', --x);
-            }
-            lifts = x;
-            $('#LiftController b').text(x);
-            event.preventDefault();
-        }
-    </script>
 
 </body>
 </html>
