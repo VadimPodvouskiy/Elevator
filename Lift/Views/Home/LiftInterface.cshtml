@@ -9,35 +9,72 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <link rel="stylesheet" href="~/css/Body.css" />
     <link rel="stylesheet" href="~/css/Button.css" />
     <link rel="stylesheet" href="~/css/Div.css" />
-    <link rel="stylesheet" href="~/css/Classes.css"/>
+    <link rel="stylesheet" href="~/css/Classes.css" />
+
     <style>
         .status-bar {
-        background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd ); color: black; border-radius: 10px;
-        padding: 2px; text-align: center; margin-left: 5%; width: 150px; height: 140px;
-        margin-left: 1300px; margin-top: -140px;
-    }
+            background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
+            color: black;
+            border-radius: 10px;
+            padding: 2px;
+            text-align: center;
+            margin-left: 5%;
+            width: 150px;
+            height: 140px;
+            margin-left: 1300px;
+            margin-top: -140px;
+        }
     </style>
+
+    <script>
+        function Create() {
+            alert("Object 'People' was created!");
+        }
+
+        function Start() {
+            alert("Simulation was started!");
+        }
+
+        function Pause() {
+            alert("Simulation was pauseded!")
+        }
+
+        function SpeedUp() {
+            alert("Speed was increased!");
+        }
+
+        function SpeedDown() {
+            alert("Speed was decreased!");
+        }
+
+        function Emergency() {
+            alert("!!!WARNING!!!");
+        }
+    </script>
+
 </head>
 
 <body>
     <!-- background="~/Back.jpg";-->
     <table style="width: 1200px;">
         @{ 
-            int i = 0;
+            int Floors = Model.Floors + 1;
         }
         @do
         {
-            i++;
+            Floors--;
         <tr>
             <!--First Block-->
             <!--First Colomn (Create)-->
             <td style="width: 120px;">
                 <div>
-                    <button class="create-button">Create</button>
+                    <button onclick="Create()" class="create-button">Create</button>
                 </div>
             </td>
 
@@ -202,24 +239,24 @@
             <!--Индикатор Этажей-->
             <td style="width: 20px;">
                 <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
-                    <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@i</b>
+                    <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
                 </div>
             </td>
 
             @{ 
-                int j = 0;
+                int Lifts = 0;
             }
             @do
             {
-                j++;
+                Lifts++;
 
             <!--Lift-->
             <td style="width: 55px;">
                 <div class="lift-background">
-                    <!--<img src="openedlift.jpg" class="lift">-->
+                    <img src="~/closedlift.jpg" class="lift">
                 </div>
             </td>
-            } while (j < Model.Lifts);
+            } while (Lifts < Model.Lifts);
 
             @*<!--Lift Second-->
         <td style="width: 55px;">
@@ -235,18 +272,18 @@
             </div>
         </td>*@
         </tr>
-        } while (i < Model.Floors);
+        } while (Floors > 1);
     </table>
 
     <!--START-->
-    <div style="display: flex;">
+    <div onclick="Start()" style="display: flex;">
         <button class="start-pause-stop" style="margin-top: -500px;">
             <b>START</b>
         </button>
     </div>
 
     <!--PAUSE-->
-    <div style="display: flex;">
+    <div onclick="Pause()" style="display: flex;">
         <button class="start-pause-stop" style="margin-top:-440px;">
             <b>PAUSE</b>
         </button>
@@ -264,21 +301,21 @@
 
     <!--SPEED UP-->
     <div style="display: flex;">
-        <button class="speed" style="margin-left: 1310px;">
+        <button onclick="SpeedUp()" class="speed" style="margin-left: 1310px;">
             <b>SPEED UP</b>
         </button>
     </div>
 
     <!--SPEED DOWN-->
     <div style="display: flex;">
-        <button class="speed" style="margin-left: 1380px;">
+        <button onclick="SpeedDown()" class="speed" style="margin-left: 1380px;">
             <b>SPEED DOWN</b>
         </button>
     </div>
 
     <!--EMERGENCY-->
     <div style="display: flex;">
-        <button class="emergency">
+        <button onclick="Emergency()" class="emergency">
             <b>EMERGENCY</b>
         </button>
     </div>
