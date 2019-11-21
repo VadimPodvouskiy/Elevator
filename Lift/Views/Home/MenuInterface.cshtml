@@ -249,22 +249,23 @@
     </div>
 
     <script>
-        function myFunction(event)
+        function myFunction(event) {
+            var $button = $(event.srcElement);
+            var x = $button.val();
+            if (x < 5)
+            {
+                $button.prop('value', ++x);
+            }
+            $('#LiftController b').text(x);
+            event.preventDefault();
+        }
+        function myFunction2(event)
         {
             var $button = $(event.srcElement);
             var x = $button.val();
-            $button.prop('value', ++x);
+            $button.prop('value', --x);
             $('#LiftController b').text(x);
-            //event.preventDefault();
-        }
-        function myFunction2(x)
-        {
-            if (x <= 5)
-            {
-                x = x - 1;
-                @{Model.Lifts = Model.Lifts - 1;}
-            }
-            document.getElementById("LiftController").innerHTML =  x;
+            event.preventDefault();
         }
     </script>
 
