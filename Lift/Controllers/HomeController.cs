@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Lift.Models;
 using System.Collections.Immutable;
 using System.Linq;
+using Ninject;
+using Microsoft.AspNetCore.Http;
 
 namespace Lift.Controllers
 {
@@ -10,6 +12,7 @@ namespace Lift.Controllers
     {
         public IActionResult MenuInterface(StartupConfigurations startupConfigurations)
         {
+            ViewBag.Configuration = startupConfigurations;
             return View("MenuInterface", startupConfigurations);
         }
 
