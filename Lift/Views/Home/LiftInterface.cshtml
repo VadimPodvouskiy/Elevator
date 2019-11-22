@@ -52,24 +52,10 @@
         function SpeedDown() {
             alert("Speed was decreased!");
         }
-        background: linear-gradient(to top, rgb(14, 94, 14), #72ff30);
-        var emergency = false;
-        function Emergency(event) {
-            alert("!!!WARNING!!!");
-            if (emergency == false) {
-                emergency = true;
-            }
-            //var $button = $(event.srcElement);
-            //var x = $button.val();
-            //x = lifts;
-            //if (x < 5)
-            //{
-            //    $button.prop('value', ++x);
-            //}
-            //lifts = x;
-            //$('#LiftController b').text(x);
-            //event.preventDefault();
-        }
+        
+        //function Emergency() {
+        //    alert("!!!WARNING!!!");
+        //}
     </script>
 
 </head>
@@ -312,7 +298,6 @@
         </div>
     </form>
     
-
     <!--SPEED UP-->
     <div style="display: flex;">
         <button onclick="SpeedUp()" class="speed" style="margin-left: 1310px;">
@@ -334,12 +319,42 @@
         </button>
     </div>
 
+    <script>
+        var Emergency = false;
+        if (Emergency == false) {
+            <div style="display: flex;">
+                <button id="NotButton" style="background: linear-gradient(to top, rgb(14, 94, 14), #72ff30);" class="indicator" disabled>
+                    <b>!</b>
+                </button>
+            </div>
+            Emergency = true;
+        }
+        function Emergency() {
+            if (Emergency == false) {
+                <div style="display: flex;">
+                    <button id="NotButton" style="background: linear-gradient(to top, rgb(14, 94, 14), #72ff30);" class="indicator" disabled>
+                       <b>!</b>
+                    </button>
+                </div>
+                Emergency = true;
+            }
+            if (Emergency == true) {
+                <div style="display: flex;">
+                    <button id="NotButton" style="background: red;" class="indicator" disabled>
+                       <b>!</b>
+                    </button>
+                </div>
+                Emmergency == false;
+            }
+        }
+    </script>
+
     <!--NOT BUTTON !-->
-    <div style="display: flex;">
-        <button style="background: linear-gradient(to top, rgb(14, 94, 14), #72ff30);" class="indicator" disabled>
+    @*<div style="display: flex;">
+        <button id="NotButton" style="background: linear-gradient(to top, rgb(14, 94, 14), #72ff30);" class="indicator" disabled>
             <b>!</b>
         </button>
-    </div>
+    </div>*@
 
     <!--Status Bar-->
     <div style="display: flex;">
